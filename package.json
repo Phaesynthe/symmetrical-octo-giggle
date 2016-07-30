@@ -6,6 +6,7 @@
 	},
 	"description": "Provides reusable components for use in other front-end projects.",
 	"devDependencies": {
+	  "angular": "1.5.8",
 	  "docker": "1.0.0",
 		"eslint": "2.11.1",
 		"gulp": "3.9.1",
@@ -23,17 +24,17 @@
     ]
   },
 	"main": "",
-	"name": "Symmetrical Octo Giggle",
+	"name": "symmetrical_octo_giggle",
 	"repository": {
 		"type" : "git",
 		"url" : "https://github.com/mwj8410/Plinth.git"
 	},
 	"sasslintConfig": "./node_modules/Phae_guidelines/.sass-lint.yml",
 	"scripts": {
+	  "demo": "node demoHost/demoHost",
 		"doc": "./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,demo,*.md",
     "eslint": "eslint app",
-    "sass-lint": "sass-lint 'src/**/*.scss' -v -q",
-    "demo": "node demoHost/demoHost"
+    "sass-lint": "sass-lint 'src/**/*.scss' -v -q"
 	},
 	"version": "0.0.0"
 }

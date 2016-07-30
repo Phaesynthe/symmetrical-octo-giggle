@@ -1,11 +1,9 @@
-- var user = { name: 'John' }
-
 doctype html
 html(lang="en")
   head
     title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
+    script(type='text/javascript' src=).
+
   body
     h1 Component Demo Index
 
@@ -13,5 +11,4 @@ html(lang="en")
       each mainSectionKey in Object.keys(structure)
         div= mainSectionKey
         each subSectionKey in Object.keys(structure[mainSectionKey])
-          div= subSectionKey
-          div= structure[mainSectionKey][subSectionKey]
+          a(href='/component/' + mainSectionKey + '/' + subSectionKey + '/' + structure[mainSectionKey][subSectionKey] + '.demo.html') #{subSectionKey}
