@@ -1,12 +1,11 @@
 <div class="head-wrapper"
-    ng-click="$ctrl.expanded = !$ctrl.expanded"
+    ng-click="$ctrl.toggleState()"
   >
-  <div class="indicator-icon" ng-if="$ctrl.expanded">O</div> <!-- Open state Icon -->
-  <div class="indicator-icon" ng-if="!$ctrl.expanded">C</div> <!-- Closed state Icon -->
+  <div class="indicator-icon open-state">O</div> <!-- Open state Icon -->
+  <div class="indicator-icon close-state">C</div> <!-- Closed state Icon -->
   <div class="title-wrapper">{{ $ctrl.label }}</div> <!-- Displayed title -->
   <div class="title-additional-info" ng-transclude="titleInfoSlot"></div><!-- Additional Title-Bar information -->
 </div>
 <div class="content-wrapper"
-    ng-if="$ctrl.expanded"
     ng-transclude="paneSlot"
   ></div><!-- Container Content -->

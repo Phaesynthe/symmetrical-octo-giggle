@@ -16,4 +16,24 @@ collapsible-panel {
       display: inline-block;
     }
   }
+  .content-wrapper {
+    overflow: hidden;
+  }
+
+  &:not(.open) {
+    .indicator-icon.open-state {
+      display: none;
+    }
+    .content-wrapper {
+      height: 0;
+    }
+  }
+  &.open {
+    .indicator-icon.close-state {
+      display: none;
+    }
+    .content-wrapper {
+      height: auto;
+    }
+  }
 }
