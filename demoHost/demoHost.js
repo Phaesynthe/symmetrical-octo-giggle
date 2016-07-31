@@ -89,6 +89,9 @@ app.get('/lib/*', (req, res) => {
     if (err) {
       res.send(err);
     }
+    if (filePath.indexOf('.css') > 0) {
+      res.header("Content-Type", "text/css");
+    }
     res.send(contents);
   });
 
