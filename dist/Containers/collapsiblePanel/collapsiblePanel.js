@@ -5,8 +5,10 @@ angular.module('sog.containers.collapsiblePanel', [])
     bindings: {
       'label': '@'
     },
-    controller: () => {},
     templateUrl: 'collapsiblePanel.html',
-    transclude: true
+    transclude: {
+      'paneSlot': 'pane',
+      'titleInfoSlot': '?titleInfo'
+    }
   }
 );

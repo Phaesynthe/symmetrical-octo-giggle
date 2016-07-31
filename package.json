@@ -1,40 +1,50 @@
 {
-	"author": "Matthew Jackson <mwj8410@gmail.com>",
-	"dependencies": {
-	  "express": "~3.2.4",
-	  "jade": "1.11.0"
-	},
-	"description": "Provides reusable components for use in other front-end projects.",
-	"devDependencies": {
-	  "angular": "1.5.8",
-	  "docker": "1.0.0",
-		"eslint": "2.11.1",
-		"gulp": "3.9.1",
-		"gulp-clean-css": "2.0.9",
-		"gulp-concat-util": "0.5.5",
-		"gulp-rename": "1.2.2",
-		"gulp-sass": "2.3.1",
-		"Phae_guidelines": "https://github.com/Phaesynthe/Phae_guidelines.git",
-		"Plinth": "https://github.com/mwj8410/Plinth.git",
-		"sass-lint": "1.8.2"
-	},
+  "author": "Matthew Jackson <mwj8410@gmail.com>",
+  "dependencies": {
+    "express": "~3.2.4",
+    "jade": "1.11.0"
+  },
+  "description": "Provides reusable components for use in other front-end projects.",
+  "devDependencies": {
+    "angular": "1.5.8",
+    "angular-mocks": "^1.5.8",
+    "docker": "1.0.0",
+    "eslint": "2.11.1",
+    "gulp": "3.9.1",
+    "gulp-angular-embed-templates": "2.2.0",
+    "gulp-clean-css": "2.0.9",
+    "gulp-concat-util": "0.5.5",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "2.3.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "1.1.2",
+    "karma-coverage": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-spec-reporter": "0.0.26",
+    "Phae_guidelines": "https://github.com/Phaesynthe/Phae_guidelines.git",
+    "Plinth": "https://github.com/mwj8410/Plinth.git",
+    "sass-lint": "1.8.2"
+  },
   "eslintConfig": {
     "extends": [
       "./node_modules/Phae_guidelines/.eslintrc.js"
     ]
   },
-	"main": "",
-	"name": "symmetrical_octo_giggle",
-	"repository": {
-		"type" : "git",
-		"url" : "https://github.com/mwj8410/Plinth.git"
-	},
-	"sasslintConfig": "./node_modules/Phae_guidelines/.sass-lint.yml",
-	"scripts": {
-	  "demo": "node demoHost/demoHost",
-		"doc": "./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,demo,*.md",
-    "eslint": "eslint app",
-    "sass-lint": "sass-lint 'src/**/*.scss' -v -q"
-	},
-	"version": "0.0.0"
+  "main": "",
+  "name": "symmetrical_octo_giggle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwj8410/Plinth.git"
+  },
+  "sasslintConfig": "./node_modules/Phae_guidelines/.sass-lint.yml",
+  "scripts": {
+    "build": "gulp build",
+    "demo": "node demoHost/demoHost",
+    "doc": "./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,demo,*.md",
+    "eslint": "eslint dist",
+    "karma": "karma start ./test/karma.conf.js",
+    "sass-lint": "sass-lint 'src/**/*.scss' -v -q",
+    "test": "npm run build && npm run karma && npm run eslint"
+  },
+  "version": "0.0.0"
 }

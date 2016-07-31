@@ -1,3 +1,5 @@
+/coverage/
 /dist/**/*.css
+/dist/**/*.dist.js
 
 /node_modules/
