@@ -4,7 +4,7 @@ html(lang="en")
     title= pageTitle
     script(type='text/javascript' src=).
 
-  body
+  body(class="main-content")
     h1 Component Demo Index
 
     div
@@ -12,3 +12,4 @@ html(lang="en")
         div= mainSectionKey
         each subSectionKey in Object.keys(structure[mainSectionKey])
           a(href='/component/' + mainSectionKey + '/' + subSectionKey + '/' + structure[mainSectionKey][subSectionKey] + '.demo.html') #{subSectionKey}
+          br

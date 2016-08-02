@@ -72,11 +72,11 @@ app.get('/component/*', (req, res) => {
     });
   } else {
     fs.readFile(path.resolve(__dirname, '../dist/' + filePath), 'utf8', (err, contents) => {
-      if (err) {
-        res.send(err);
-      }
       if (filePath.indexOf('.css') > 0) {
         res.header("Content-Type", "text/css");
+      }
+      if (err) {
+        res.send(err);
       }
       res.send(contents);
     });

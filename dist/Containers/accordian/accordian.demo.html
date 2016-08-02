@@ -1,0 +1,23 @@
+<p>The accordian component is intended to display a serise of content blocks, each with a title in a compressed area.</p>
+
+<p>Concerns are that the content must be available in the host HTML for search engine indexing.</p>
+
+<br />
+
+<accordian>
+  <div>
+    <h3>Example Label 1</h3>
+    <div>Content 1</div>
+  </div>
+  <div>
+    <h3>Example Label 2</h3>
+    <div>Content 2</div>
+  </div>
+</accordian>
+
+<script>
+/* global angular */
+var demo = angular.module('demo', ['sog.containers.accordian'])
+  .controller('mainCtrl', () => {
+});
+</script>
