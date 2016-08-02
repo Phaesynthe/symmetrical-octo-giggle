@@ -31,15 +31,15 @@ describe('Container: collapsiblePanel', function () {
 
   it('defaults closed', function () {
     setup(defaultTemplate);
-    expect(component[0].querySelectorAll('div.content-wrapper').length).toBe(0);
+    expect(component[0].classList.contains('open')).toBe(false);
   });
 
   it('toggles open state of content on title click', function () {
     setup(defaultTemplate);
     angular.element(component[0].querySelectorAll('div.head-wrapper')).triggerHandler('click');
-    expect(component[0].querySelectorAll('div.content-wrapper').length).toBe(1);
+    expect(component[0].classList.contains('open')).toBe(true);
     angular.element(component[0].querySelectorAll('div.head-wrapper')).triggerHandler('click');
-    expect(component[0].querySelectorAll('div.content-wrapper').length).toBe(0);
+    expect(component[0].classList.contains('open')).toBe(false);
   });
 
 });

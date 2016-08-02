@@ -41,7 +41,7 @@
     "build": "gulp build",
     "demo": "node demoHost/demoHost",
     "doc": "./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,demo,*.md",
-    "eslint": "eslint dist",
+    "eslint": "eslint dist --ignore-pattern *.dist.js",
     "karma": "karma start ./test/karma.conf.js",
     "sass-lint": "sass-lint 'src/**/*.scss' -v -q",
     "test": "npm run build && npm run karma && npm run eslint"

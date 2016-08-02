@@ -7,7 +7,16 @@ describe('Container: accodian', function () {
     setup;
 
   defaultTemplate = (
-      ''
+      '<accordian>' +
+        '<div>' +
+          '<h3>Example Label 1</h3>' +
+          '<div>Content 1</div>' +
+        '</div>' +
+        '<div>'  +
+          '<h3>Example Label 2</h3>' +
+          '<div>Content 2</div>' +
+        '</div>' +
+      '</accordian>'
     );
 
   beforeEach(angular.mock.module('sog.containers.accordian'));
@@ -24,7 +33,7 @@ describe('Container: accodian', function () {
 
   it('can be instantiated', function () {
     setup(defaultTemplate);
-    expect(component[0].querySelectorAll('div.head-wrapper').length).toBe(1);
+    expect(component[0].querySelectorAll('div.label-wrapper').length).toBe(2);
   });
 
 });
