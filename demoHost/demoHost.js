@@ -18,7 +18,7 @@ var getDemoFile = srcpath => {
   });
 };
 
-var constructDirectory = () => {
+var mapProject = () => {
   var output = {};
   getDirectories(path.resolve(__dirname, '../dist')).forEach(firstLayer => {
     output[firstLayer] = {};
@@ -37,9 +37,8 @@ var constructDirectory = () => {
 };
 
 app.get('/', (req, res) => {
-  var pageData;
-  pageData = {
-    structure: constructDirectory()
+  var pageData = {
+    structure: mapProject()
   };
   res.send(
     jade.renderFile(path.resolve(__dirname, './templates/index.jade'), pageData)
